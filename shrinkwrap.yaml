@@ -6,6 +6,7 @@ dependencies:
   ejs: 3.0.1
   express: 4.17.1
   jquery: 3.4.1
+  leaflet: 1.6.0
   pg: 6.4.2
 devDependencies:
   nodemon: 1.19.4
@@ -1669,6 +1670,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-ogU4P+oyKzO1rjsYq+4NwvNW7hU=
+  /leaflet/1.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-CPkhyqWUKZKFJ6K8umN5/D2wrJ2+/8UIpXppY7QDnUZW5bZL5+SEI2J7GBpwh4LIupOKqbNSQXgqmrEJopHVNQ==
   /levn/0.3.0:
     dependencies:
       prelude-ls: 1.1.2
@@ -3013,5 +3018,6 @@ specifiers:
   ejs: ^3.0.1
   express: ^4.15.3
   jquery: ^3.4.1
+  leaflet: ^1.5.1
   nodemon: ^1.11.0
   pg: ^6.2.4

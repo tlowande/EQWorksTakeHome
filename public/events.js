@@ -1,17 +1,18 @@
 $(() => {
-  $(".btn-secondary").click(function() {
+
+  $("#btn-amchartsMap").click(function() {
     window.location.href = "https://habitual-license.glitch.me/poi";
   }); //end of eventlistener for btn-poi
-
+  
   //-------------------------
   $(".btn-outline-primary").click(function() {
     $("#eventsDailyDiv").toggle("slow");
   });
-
+  
   $(".btn-outline-secondary").click(function() {
     $("#eventsHourlyDiv").toggle("slow");
   }); //end of eventlistener for btn-events-hourly
-
+  
   $(".btn-outline-success").click(function() {
     $("#statsDailyDiv").toggle("slow");
   });
@@ -487,7 +488,7 @@ $(() => {
           }
         });
         poiEvents.shift();
-        console.log(poiEvents);
+        // console.log(poiEvents);
 
         /**
          * ---------------------------------------

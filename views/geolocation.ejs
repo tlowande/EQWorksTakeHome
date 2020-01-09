@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-  
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  
-  <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-  <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-  
-  <title>POI Geolocation</title>
-</head>
-<body>
-<!--   <h2>
-  this is a test
-  </h2> -->
-  <div id="mapdiv"></div>
-  <table class="table table-dark" id="sm">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Lat</th>
-      <th scope="col">Lon</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-<!--   <%=savedLocations%> -->
-  
-  
-  <script type="text/javascript" src="poi.js"></script>
-  <button type="button" class="btn btn-danger">Back</button>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://www.amcharts.com/lib/3/plugins/export/export.css"
+      type="text/css"
+      media="all"
+    />
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+
+    <title>POI Geolocation</title>
+  </head>
+  <body>
+    <div id="mapdiv-Amcharts"></div>
+    <table class="table table-dark" id="sm">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Lat</th>
+          <th scope="col">Lon</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!--   <%=savedLocations%> -->
+
+    <script type="text/javascript" src="poi.js"></script>
+    <button type="button" class="btn btn-danger">Back</button>
+  </body>
 </html>
