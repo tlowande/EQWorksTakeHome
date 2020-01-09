@@ -538,11 +538,11 @@ $(() => {
         var series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueX = "events";
         series.dataFields.categoryY = "poi";
-        series.columns.template.tooltipText = "{categoryY}: [bold]{valueX}[/]";
+        series.columns.template.tooltipText = "Events: [bold]{valueX}[/]";
         series.columns.template.strokeWidth = 0;
         series.columns.template.adapter.add("fill", function(fill, target) {
           if (target.dataItem) {
-            switch (target.dataItem.dataContext.region) {
+            switch (target.dataItem.dataContext.day) {
               case "2017-01-01":
                 return chart.colors.getIndex(0);
                 break;
@@ -578,10 +578,10 @@ $(() => {
           range.label.disabled = false;
           range.label.fill = color;
           range.label.location = 0;
-          range.label.dx = -130;
+          range.label.dx = -150;
           range.label.dy = 12;
           range.label.fontWeight = "bold";
-          range.label.fontSize = 12;
+          range.label.fontSize = 10;
           range.label.horizontalCenter = "left";
           range.label.inside = true;
 
@@ -596,18 +596,18 @@ $(() => {
           range.locations.category = 1;
         }
 
-        addRange("2017-01-01", "Vancouver Harbour1", "Niagara Falls1", chart.colors.getIndex(0));
-        addRange("2017-01-02", "Niagara Falls2", "EQ Works2", chart.colors.getIndex(1));
+        addRange("2017-01-01", "Niagara Falls1", "Vancouver Harbour1", chart.colors.getIndex(0));
+        addRange("2017-01-02", "EQ Works2", "Niagara Falls2", chart.colors.getIndex(1));
         addRange(
           "2017-01-03",
-          "Niagara Falls3",
           "CN Tower3",
+          "Niagara Falls3",
           chart.colors.getIndex(2)
         );
-        addRange("2017-01-04", "CN Tower4", "Vancouver Harbour4", chart.colors.getIndex(3));
+        addRange("2017-01-04", "Vancouver Harbour4", "CN Tower4", chart.colors.getIndex(3));
         addRange("2017-01-05", "Niagara Falls5", "Niagara Falls5", chart.colors.getIndex(4));
-        addRange("2017-01-06", "EQ Works6", "Vancouver Harbour6", chart.colors.getIndex(5));
-        addRange("2017-01-07", "EQ Works7", "Vancouver Harbour7", chart.colors.getIndex(6));
+        addRange("2017-01-06", "Vancouver Harbour6", "EQ Works6", chart.colors.getIndex(5));
+        addRange("2017-01-07", "Vancouver Harbour7", "EQ Works7", chart.colors.getIndex(6));
 
         chart.cursor = new am4charts.XYCursor();
       }); //end of last then
