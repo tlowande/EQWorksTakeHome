@@ -27,7 +27,8 @@
     "amcharts3": "^3.21.15",
     "@amcharts/amcharts4-geodata": "^4.1.9",
     "bootstrap": "^4.4.1",
-    "leaflet": "^1.5.1"
+    "leaflet": "^1.5.1",
+    "leaflet.markercluster": "^1.4.1"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
