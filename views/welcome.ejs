@@ -56,9 +56,9 @@
         Events Hourly
       </button>
       <button type="button" class="btn btn-outline-success">Stats Daily</button>
-      <button type="button" class="btn btn-outline-info">Stats Hourly</button>
-      <button type="button" class="btn btn-secondary" id="btn-leafletMap">POI 1</button>
-      <button type="button" class="btn btn-secondary" id="btn-amchartsMap">POI 2</button>
+      <button type="button" class="btn btn-outline-danger" disabled>Stats Hourly</button>
+      <button type="button" class="btn btn-outline-warning" id="btn-leafletMap">POI 1</button>
+      <button type="button" class="btn btn-outline-info" id="btn-amchartsMap">POI 2</button>
     </div>
 
     <div id="statsDailyDiv">
@@ -88,10 +88,16 @@
     </div>
 
     <div id="eventsDailyDiv">
-      <h2>
-        Daily Events & POI
-      </h2>
+      <h5>
+        Daily Events 
+      </h5>
       <div id="dailyEventsChart"></div>
+      <h5>
+        Events/POI
+      </h5>
+      <h6>
+        per day in a week
+      </h6>
       <div id="poiEventsChart"></div>
     </div>
 

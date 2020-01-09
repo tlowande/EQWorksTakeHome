@@ -39,6 +39,9 @@ $(() => {
        *
        * Documentation is available at:
        * https://www.amcharts.com/docs/v4/
+       *
+       * Original at https://www.amcharts.com/demos/pareto-diagram/
+       * adjusted for EQWorks challenge by Tamires Lowande
        * ---------------------------------------
        */
 
@@ -57,9 +60,10 @@ $(() => {
       let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
       categoryAxis.dataFields.category = "date";
       categoryAxis.renderer.grid.template.location = 0;
-      categoryAxis.renderer.minGridDistance = 0;
+      categoryAxis.renderer.minGridDistance = 20;
       categoryAxis.tooltip.disabled = false;
       categoryAxis.renderer.labels.template.rotation = 90;
+      categoryAxis.renderer.labels.template.location = 1;
 
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       valueAxis.renderer.minWidth = 50;
