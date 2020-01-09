@@ -1,0 +1,80 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#eventsDailyDiv{
+  display: none;
+}
+
+#dailyEventsChart {
+  width: 60%;
+  height: 500px;
+  margin: auto;
+}
+
+#poiEventsChart{
+    width: 80%;
+    height: 800px;
+    margin: auto;
+}
+
+#eventsHourlyDiv{
+  display: none;
+}
+
+#radarchartdiv {
+  width: 80%;
+  height: 900px;
+  margin:auto;
+}
+
+#statsDailyDiv {
+  display: none;
+}
+
+#dailyStatsChart {
+  width: 90%;
+  height: 500px;
+  margin: auto;
+}
+
+#mapdiv {
+  width: 100%;
+  height: 500px;
+  margin: 50px 0 50px 0;
+}
+
+.table, .tabledark, #sm{
+  width: 60%;
+  text-align: center;
+  margin:auto
+}
+
+h2 {
+  text-align: center;
+  padding: 50px 0 20px 0;
+}
+
+h5 {
+  text-align: center;
+  color: rgb(100,100,100)
+}
+
+h6{
+  text-align: center;
+  color:grey;
+  margin-bottom: 80px; 
+}
+
+#buttons {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+button {
+  width: 150px;
+}

@@ -1,0 +1,83 @@
+<!-- Welcome to EQ Works 😎 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+    <title>EQ Works - Challenges</title>
+  </head>
+
+  <body>
+    <h2>
+      <%=welcome%>
+    </h2>
+    <div id="buttons">
+      <button type="button" class="btn btn-outline-primary">
+        Events Daily
+      </button>
+      <button type="button" class="btn btn-outline-secondary">
+        Events Hourly
+      </button>
+      <button type="button" class="btn btn-outline-success">Stats Daily</button>
+      <button type="button" class="btn btn-outline-info">Stats Hourly</button>
+      <button type="button" class="btn btn-secondary">POI</button>
+    </div>
+
+    <div id="statsDailyDiv">
+      <h2>
+        Daily Statistics
+      </h2>
+      <h5>
+        Impressions
+      </h5>
+      <h6>
+        Revenue & Revenue per Thousand Impression
+      </h6>
+      <h6>
+        Click & Clickthrough Rate
+      </h6>
+      <div id="dailyStatsChart"></div>
+    </div>
+
+    <div id="eventsHourlyDiv">
+      <h2>
+        Hourly Events
+      </h2>
+      <h6>
+        per Week
+      </h6>
+      <div id="radarchartdiv"></div>
+    </div>
+
+    <div id="eventsDailyDiv">
+      <h2>
+        Daily Events & POI
+      </h2>
+      <div id="dailyEventsChart"></div>
+      <div id="poiEventsChart"></div>
+    </div>
+
+    <script type="text/javascript" src="stats.js"></script>
+    <script type="text/javascript" src="events.js"></script>
+  </body>
+</html>
