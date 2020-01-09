@@ -498,6 +498,9 @@ $(() => {
          *
          * Documentation is available at:
          * https://www.amcharts.com/docs/v4/
+         * 
+         * Original chart available at https://www.amcharts.com/demos/partitioned-bar-chart/
+         * Adapted for EQWorks by Tamires Lowande
          * ---------------------------------------
          */
 
@@ -506,7 +509,7 @@ $(() => {
         // Themes end
 
         // Create chart instance
-        var chart = am4core.create("poiEventsChart", am4charts.XYChart);
+        let chart = am4core.create("poiEventsChart", am4charts.XYChart);
 
         // Add data
         chart.data = poiEvents
@@ -526,16 +529,16 @@ $(() => {
         // ]
 
         // Create axes
-        var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+        let yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
         yAxis.dataFields.category = "poi";
         yAxis.renderer.grid.template.location = 0;
         yAxis.renderer.labels.template.fontSize = 10;
         yAxis.renderer.minGridDistance = 10;
 
-        var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+        let xAxis = chart.xAxes.push(new am4charts.ValueAxis());
 
         // Create series
-        var series = chart.series.push(new am4charts.ColumnSeries());
+        let series = chart.series.push(new am4charts.ColumnSeries());
         series.dataFields.valueX = "events";
         series.dataFields.categoryY = "poi";
         series.columns.template.tooltipText = "Events: [bold]{valueX}[/]";
@@ -571,7 +574,7 @@ $(() => {
 
         // Add ranges
         function addRange(label, start, end, color) {
-          var range = yAxis.axisRanges.create();
+          let range = yAxis.axisRanges.create();
           range.category = start;
           range.endCategory = end;
           range.label.text = label;
