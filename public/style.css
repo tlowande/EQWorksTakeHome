@@ -3,7 +3,10 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-#eventsDailyDiv {
+#eventsDailyDiv,
+#eventsHourlyDiv,
+#statsDailyDiv,
+#mapDiv {
   display: none;
 }
 
@@ -11,7 +14,7 @@ body {
   width: 60%;
   height: 500px;
   margin: auto;
-  margin-bottom: 50px
+  margin-bottom: 50px;
 }
 
 #poiEventsChart {
@@ -20,9 +23,9 @@ body {
   margin: auto;
 }
 
-#eventsHourlyDiv {
+/* #eventsHourlyDiv {
   display: none;
-}
+} */
 
 #radarchartdiv {
   width: 80%;
@@ -30,9 +33,9 @@ body {
   margin: auto;
 }
 
-#statsDailyDiv {
+/* #statsDailyDiv {
   display: none;
-}
+} */
 
 #dailyStatsChart {
   width: 90%;
@@ -40,10 +43,17 @@ body {
   margin: auto;
 }
 
-#mapdiv {
+#mapdiv-Amcharts {
   width: 100%;
   height: 500px;
   margin: 50px 0 50px 0;
+}
+
+#leafletMap {
+  width: 1000px;
+  height: 450px;
+  /* position: relative; */
+  margin:auto
 }
 
 .table,
