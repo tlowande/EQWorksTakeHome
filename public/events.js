@@ -464,22 +464,22 @@ $(() => {
         });
       })
       .then(res => {
-        let poiEvents = [1];
+        let poiEvents = ["first"];
 
         hourly_events.forEach(data => {
-          let index;
-          if (poiEvents.length > 0) {
-            index = poiEvents.findIndex(
-              element => element.day === data.date && element.poi === data.name
-            );
-          }
+          
+          let index = poiEvents.findIndex(
+            element => element.day === data.date.slice(0,10) && element.poi === (data.name + data.date.slice(9,10))
+          );
+          
 
           if (index > 0) {
             poiEvents[index].events += data.events;
           } else {
+            // let date = new Date(data.date.slice(0, 10).replace(/-/g, "/")).toString().slice(0, 10);
             let poiDay = {
-              day: data.date,
-              poi: data.name,
+              day: data.date.slice(0,10),
+              poi: data.name + data.date.slice(9,10),
               events: data.events
             };
 
@@ -488,8 +488,130 @@ $(() => {
         });
         poiEvents.shift();
         console.log(poiEvents);
-      });
-  };
+
+        /**
+         * ---------------------------------------
+         * This demo was created using amCharts 4.
+         *
+         * For more information visit:
+         * https://www.amcharts.com/
+         *
+         * Documentation is available at:
+         * https://www.amcharts.com/docs/v4/
+         * ---------------------------------------
+         */
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        // Create chart instance
+        var chart = am4core.create("poiEventsChart", am4charts.XYChart);
+
+        // Add data
+        chart.data = poiEvents
+        // chart.data = [
+        //   {
+        //     region: "Central",
+        //     state: "North Dakota",
+        //     sales: 920
+        //   }]
+
+        // poi events =[
+        //   {
+        //     day: "2017-01-01T00:00:00.000Z",
+        //     poi: "Vancouver Harbour",
+        //     events: 30
+        //   }
+        // ]
+
+        // Create axes
+        var yAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+        yAxis.dataFields.category = "poi";
+        yAxis.renderer.grid.template.location = 0;
+        yAxis.renderer.labels.template.fontSize = 10;
+        yAxis.renderer.minGridDistance = 10;
+
+        var xAxis = chart.xAxes.push(new am4charts.ValueAxis());
+
+        // Create series
+        var series = chart.series.push(new am4charts.ColumnSeries());
+        series.dataFields.valueX = "events";
+        series.dataFields.categoryY = "poi";
+        series.columns.template.tooltipText = "Events: [bold]{valueX}[/]";
+        series.columns.template.strokeWidth = 0;
+        series.columns.template.adapter.add("fill", function(fill, target) {
+          if (target.dataItem) {
+            switch (target.dataItem.dataContext.day) {
+              case "2017-01-01":
+                return chart.colors.getIndex(0);
+                break;
+              case "2017-01-02":
+                return chart.colors.getIndex(1);
+                break;
+              case "2017-01-03":
+                return chart.colors.getIndex(2);
+                break;
+              case "2017-01-04":
+                return chart.colors.getIndex(3);
+                break;
+              case "2017-01-05":
+                return chart.colors.getIndex(4);
+                break;
+              case "2017-01-06":
+                return chart.colors.getIndex(5);
+                break;
+              case "2017-01-07":
+                return chart.colors.getIndex(6);
+                break;
+            }
+          }
+          return fill;
+        });
+
+        // Add ranges
+        function addRange(label, start, end, color) {
+          var range = yAxis.axisRanges.create();
+          range.category = start;
+          range.endCategory = end;
+          range.label.text = label;
+          range.label.disabled = false;
+          range.label.fill = color;
+          range.label.location = 0;
+          range.label.dx = -150;
+          range.label.dy = 12;
+          range.label.fontWeight = "bold";
+          range.label.fontSize = 10;
+          range.label.horizontalCenter = "left";
+          range.label.inside = true;
+
+          range.grid.stroke = am4core.color("#396478");
+          range.grid.strokeOpacity = 1;
+          range.tick.length = 200;
+          range.tick.disabled = false;
+          range.tick.strokeOpacity = 0.6;
+          range.tick.stroke = am4core.color("#396478");
+          range.tick.location = 0;
+
+          range.locations.category = 1;
+        }
+
+        addRange("2017-01-01", "Niagara Falls1", "Vancouver Harbour1", chart.colors.getIndex(0));
+        addRange("2017-01-02", "EQ Works2", "Niagara Falls2", chart.colors.getIndex(1));
+        addRange(
+          "2017-01-03",
+          "CN Tower3",
+          "Niagara Falls3",
+          chart.colors.getIndex(2)
+        );
+        addRange("2017-01-04", "Vancouver Harbour4", "CN Tower4", chart.colors.getIndex(3));
+        addRange("2017-01-05", "Niagara Falls5", "Niagara Falls5", chart.colors.getIndex(4));
+        addRange("2017-01-06", "Vancouver Harbour6", "EQ Works6", chart.colors.getIndex(5));
+        addRange("2017-01-07", "Vancouver Harbour7", "EQ Works7", chart.colors.getIndex(6));
+
+        chart.cursor = new am4charts.XYCursor();
+      }); //end of last then
+  }; //end of the function
 
   getEvents_hourly();
-});
+}); //end of window.onload
