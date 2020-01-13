@@ -28,7 +28,9 @@
     "@amcharts/amcharts4-geodata": "^4.1.9",
     "bootstrap": "^4.4.1",
     "leaflet": "^1.5.1",
-    "leaflet.markercluster": "^1.4.1"
+    "leaflet.markercluster": "^1.4.1",
+    "redis": "^2.8.0",
+    "redis-server": "^1.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
