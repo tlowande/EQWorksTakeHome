@@ -6,7 +6,7 @@ const app = express();
 // https://www.postgresql.org/docs/9.6/static/libpq-envars.html
 
 const pool = new pg.Pool();
-// const rateCheck = require('./rate-limiting')
+const rateCheck = require('./rate-limiting')
 const queryHandler = (req, res, next) => {
   pool
     .query(req.sqlQuery)
@@ -18,7 +18,7 @@ const queryHandler = (req, res, next) => {
 
 //-----------------------
 
-// app.use(rateCheck)
+app.use(rateCheck)
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 

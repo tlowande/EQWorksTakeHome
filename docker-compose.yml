@@ -13,3 +13,12 @@ services:
     environment:
       - NODE_ENV=development
     command: npm run dev
+
+  # redis:
+  #   image: redis:4.0.5-alpine
+  #   command: ["redis-server", "--appendonly", "yes"]
+  #   hostname: redis
+  #   networks:
+  #     - redis-net
+  #   volumes:
+  #     - redis-data:/data
