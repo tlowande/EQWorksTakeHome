@@ -30,7 +30,8 @@
     "leaflet": "^1.5.1",
     "leaflet.markercluster": "^1.4.1",
     "redis": "^2.8.0",
-    "redis-server": "^1.2.2"
+    "redis-server": "^1.2.2",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
