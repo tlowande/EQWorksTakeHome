@@ -17,10 +17,10 @@ const queryHandler = (req, res, next) => {
 };
 
 //-----------------------
-
 app.use(rateCheck)
 app.use(express.static("public"));
 app.set("view engine", "ejs");
+app.set('trust proxy', true) //for rate limiter to work with wifi ip address
 
 //-----------------------
 
