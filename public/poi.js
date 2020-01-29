@@ -72,7 +72,11 @@ $(() => {
           enabled: true
         }
       });
-    });
+    })
+    .catch(error => {
+    console.log("got to the catch on amchart map poi2")
+    location.reload()
+    })
   };
 
   //-------------------------

@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors')
 const pg = require("pg");
 
 const app = express();
@@ -17,6 +18,7 @@ const queryHandler = (req, res, next) => {
 };
 
 //-----------------------
+app.use(cors())
 app.use(rateCheck)
 app.use(express.static("public"));
 app.set("view engine", "ejs");

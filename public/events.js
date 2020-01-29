@@ -172,7 +172,11 @@ $(() => {
           }
         }
       });
-    });
+    })
+    .catch(error => {
+      console.log("got to the catch on daily events")
+      location.reload()
+    })
   };
 
   getEvents_daily();
@@ -614,7 +618,11 @@ $(() => {
         addRange("2017-01-07", "Vancouver Harbour7", "EQ Works7", chart.colors.getIndex(6));
 
         chart.cursor = new am4charts.XYCursor();
-      }); //end of last then
+      }) //end of last then
+      .catch(error => {
+        console.log("got to the catch on hourly events")
+        location.reload()
+      })
   }; //end of the function
 
   getEvents_hourly();

@@ -135,7 +135,11 @@ $(() => {
       // Cursor
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.behavior = "panX";
-    });
+    })
+    .catch(error => {
+    console.log("got to the catch on stats")
+    location.reload()
+    })
   };
 
   getStats_daily();

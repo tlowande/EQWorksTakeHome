@@ -43,7 +43,7 @@ module.exports = (req, res, next) => {
       redisClient.get(req.ip, (err, reply) => {
         
         let data = JSON.parse(reply)
-        // console.log(" ACCESSES >>>>>>>>>>>>>>", data)
+        console.log(" ACCESSES >>>>>>>>>>>>>>", data)
         let currentTime = moment().unix()
         let difference = (currentTime - data.startTime) / 60
         
@@ -61,7 +61,7 @@ module.exports = (req, res, next) => {
         
         if (difference < 1) {
           //block the request
-          if (data.count > 15) {
+          if (data.count >= 20) {
             let countdown = (60 - ((moment().unix() - data.startTime)))
 
             let timeLeft = {"time": countdown} 
