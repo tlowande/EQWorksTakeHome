@@ -3,6 +3,7 @@ dependencies:
   '@amcharts/amcharts4-geodata': 4.1.9
   amcharts3: 3.21.15
   bootstrap: 4.4.1
+  cors: 2.8.5
   ejs: 3.0.1
   express: 4.17.1
   jquery: 3.4.1
@@ -585,6 +586,15 @@ packages:
   /core-util-is/1.0.2:
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
+  /cors/2.8.5:
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
+    dev: false
+    engines:
+      node: '>= 0.10'
+    resolution:
+      integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==
   /crc-32/1.2.0:
     dependencies:
       exit-on-epipe: 1.0.1
@@ -1929,6 +1939,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-ejs9DpgGPUP0wD8uiubNUahog6A=
+  /object-assign/4.1.1:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=
   /object-copy/0.1.0:
     dependencies:
       copy-descriptor: 0.1.1
@@ -3067,6 +3083,7 @@ specifiers:
   '@amcharts/amcharts4-geodata': ^4.1.9
   amcharts3: ^3.21.15
   bootstrap: ^4.4.1
+  cors: ^2.8.5
   ejs: ^3.0.1
   express: ^4.15.3
   jquery: ^3.4.1

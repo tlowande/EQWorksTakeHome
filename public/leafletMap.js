@@ -42,6 +42,10 @@ const coord = () => {
 
       markerClusters.addLayer(marker);
       mymap.addLayer(markerClusters);
-    });
-  }); //end of then
+    });//end of forEach
+  }) //end of then
+  .catch(error => {
+    console.log("got to the catch on poi")
+    location.reload()
+  })
 }; //end of function

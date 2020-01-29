@@ -31,7 +31,8 @@
     "leaflet.markercluster": "^1.4.1",
     "redis": "^2.8.0",
     "redis-server": "^1.2.2",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "cors": "^2.8.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
