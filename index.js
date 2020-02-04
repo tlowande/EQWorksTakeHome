@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('cors')
+const cors = require("cors");
 const pg = require("pg");
 
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 // https://www.postgresql.org/docs/9.6/static/libpq-envars.html
 
 const pool = new pg.Pool();
-const rateCheck = require('./rate-limiting')
+const rateCheck = require("./rate-limiting");
 const queryHandler = (req, res, next) => {
   pool
     .query(req.sqlQuery)
@@ -18,11 +18,11 @@ const queryHandler = (req, res, next) => {
 };
 
 //-----------------------
-app.use(cors())
-app.use(rateCheck)
+app.use(cors());
+app.use(rateCheck);
 app.use(express.static("public"));
 app.set("view engine", "ejs");
-app.set('trust proxy', true) //for rate limiter to work with wifi ip address
+app.set("trust proxy", true); //for rate limiter to work with wifi ip address
 
 //-----------------------
 
@@ -83,12 +83,28 @@ app.get(
     //   ORDER BY date, hour
     //   LIMIT 168;
     // `
-    req.sqlQuery = `
+    
+    const generalQuery = `
     SELECT *
     FROM public.hourly_stats
+    INNER JOIN public.poi ON public.poi.poi_id=public.hourly_stats.poi_id
     ORDER BY date, hour
     LIMIT 168;
-  `;
+  `
+    
+    console.log("day being passed is: ", req.query.day)
+    let day = req.query.day
+    
+    let selectedDay = `
+    SELECT *
+    FROM public.hourly_stats
+    INNER JOIN public.poi ON public.poi.poi_id=public.hourly_stats.poi_id
+    WHERE date ='${day}T00:00:00.000Z'
+    ORDER BY date, hour
+    LIMIT 168;
+  `
+    // console.log(selectedDay)
+    req.sqlQuery = req.query.day ? selectedDay : generalQuery
     return next();
   },
   queryHandler

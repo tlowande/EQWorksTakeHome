@@ -56,14 +56,14 @@
         Events Hourly
       </button>
       <button type="button" class="btn btn-outline-success">Stats Daily</button>
-      <button type="button" class="btn btn-outline-danger" disabled>Stats Hourly</button>
-      <button type="button" class="btn btn-outline-warning" id="btn-leafletMap">POI 1</button>
-      <button type="button" class="btn btn-outline-info" id="btn-amchartsMap">POI 2</button>
+<!--       <button type="button" class="btn btn-outline-danger" disabled>Stats Hourly</button> -->
+      <button type="button" class="btn btn-outline-warning" id="btn-leafletMap">POI</button>
+<!--       <button type="button" class="btn btn-outline-info" id="btn-amchartsMap">POI 2</button> -->
     </div>
 
     <div id="statsDailyDiv">
       <h2>
-        Daily Statistics
+        Statistics per Month
       </h2>
       <h5>
         Impressions
@@ -75,6 +75,17 @@
         Click & Clickthrough Rate
       </h6>
       <div id="dailyStatsChart"></div>
+      <h5>
+        Stats per Day
+      </h5>
+      <h6>
+        Choose a day
+      </h6>  
+      <form>
+        <input type="date" name="day" min="2017-01-01" max="2017-01-31" class="selected_day"><br>
+      </form>
+      
+      <div id="statsHourlyDiv"></div>
     </div>
 
     <div id="eventsHourlyDiv">
