@@ -6,6 +6,7 @@ body {
 #eventsDailyDiv,
 #eventsHourlyDiv,
 #statsDailyDiv,
+#statsHourlyDiv,
 #mapDiv {
   display: none;
 }
@@ -23,9 +24,11 @@ body {
   margin: auto;
 }
 
-/* #eventsHourlyDiv {
-  display: none;
-} */
+#statsHourlyDiv {
+  width: 100%;
+  height: 600px;
+  margin-bottom:50px;
+}
 
 #radarchartdiv {
   width: 80%;
@@ -33,14 +36,15 @@ body {
   margin: auto;
 }
 
-/* #statsDailyDiv {
-  display: none;
-} */
+#statsDailyDiv {
+  text-align: center;
+}
 
 #dailyStatsChart {
   width: 90%;
   height: 500px;
   margin: auto;
+  margin-bottom: 40px;
 }
 
 #mapdiv-Amcharts {
@@ -95,4 +99,9 @@ h6 {
 
 button {
   width: 150px;
+}
+
+form {
+  margin: 30px;
+  font-size: 1.2rem;
 }
